@@ -1,0 +1,1 @@
+import { asBool, toneClasses } from '@/lib/ui';export default function BoolBadge({value}:{value:unknown}){const ok=asBool(value);return <span className={toneClasses(ok?'emerald':'rose')}>{ok?'Sí':'No'}</span>}

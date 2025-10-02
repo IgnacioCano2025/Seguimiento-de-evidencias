@@ -1,0 +1,1 @@
+import { progressTone, toneClasses } from '@/lib/ui';export default function ProgressChip({value}:{value?:number}){const tone=progressTone(value);const label=typeof value==='number'?`${(value/100).toLocaleString('es-AR')}%`:'—';return <span className={toneClasses(tone)}>{label}</span>}

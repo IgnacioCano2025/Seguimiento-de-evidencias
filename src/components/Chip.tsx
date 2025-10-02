@@ -1,0 +1,1 @@
+import { toneClasses,type Tone } from '@/lib/ui';export default function Chip({tone='gray',children}:{tone?:Tone;children:React.ReactNode}){return <span className={toneClasses(tone)}>{children}</span>}
