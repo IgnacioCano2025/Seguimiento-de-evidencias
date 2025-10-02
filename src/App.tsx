@@ -8,13 +8,13 @@ export default function App() {
   const { q, setQ, filtered } = useSearch(rows);
   const kpis = calcKPIs(filtered);
   const zonas = groupByZona(filtered);
-  const hectareasData = zonas.map(z => ({ zona: z.zona, hectareas: z.hectareas }));
+  const hectareasData = zonas.map(z => ({ zona: z.zona, hectareas: z.hectareas/100 }));
 
   return (
     <main className="flex flex-col mx-auto max-w-7xl p-6 space-y-6">
       <header className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div className='flex justify-center items-center gap-3'>
-          <img src='src\public\edra-icon.png' width='90px' height='auto' />
+          <img src='\edra-icon.png' width='90px' height='auto' />
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-[#203C89]">Tablero — Seguimiento de evidencias</h1>
           <p>Programa de Agricultura Regenerativa Mc Cain 2025-2026</p>
@@ -48,7 +48,7 @@ export default function App() {
       </section>
 
       <LotesTable rows={filtered} />
-      <img className='self-end' src='src\public\logo-edra.png' width='150px' height='auto' />
+      <img className='self-end' src='\logo-edra.png' width='150px' height='auto' />
     </main>
   );
 }
